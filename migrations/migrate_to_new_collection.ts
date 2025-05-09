@@ -1,4 +1,6 @@
-import { Firestore } from "firebase-admin/firestore";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { Firestore } from "firebase-admin/firestore";
+
 import {
   convertV1ToV2,
   v2migrationFlag,
@@ -10,7 +12,7 @@ const BATCH_SIZE = 500;
 /**
  * Duplicates messages to a new collection in V2 format
  */
-export async function duplicateToV2Collection(db: Firestore) {
+export async function duplicateToV2Collection(db: Firestore): Promise<void> {
   try {
     let totalMessagesMigrated = 0;
     let leastCreatedAt: Date | null = null;

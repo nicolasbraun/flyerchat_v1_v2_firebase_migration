@@ -1,4 +1,6 @@
-import { Firestore, DocumentSnapshot } from "firebase-admin/firestore";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import type { Firestore } from "firebase-admin/firestore";
+
 import {
   toAllVersionsCompatible,
   v2migrationFlag,
